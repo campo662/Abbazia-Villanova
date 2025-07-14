@@ -1,0 +1,209 @@
+/* Reset di base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Impostazioni generali */
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  color: #2c2c2c;
+  background-color: #fdfcf9;
+}
+
+/* HEADER */
+header {
+  background: #ece8dd;
+  border-bottom: 2px solid #cbb994;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header span {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #6b4c3b;
+  letter-spacing: 0.5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4b3a2f;
+  background: #d8cfc1;
+  padding: 6px 12px;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #b5a58e;
+  color: #fff;
+}
+
+/* HERO SECTION */
+.hero {
+  background: url('img/abbazia_banner.jpg') center/cover no-repeat;
+  text-align: center;
+  padding: 80px 20px 60px;
+  color: #fff;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .placeholder-image {
+  display: none; /* rimosso se usi un'immagine reale di sfondo */
+}
+
+.hero h1 {
+  font-size: 3em;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* CAROUSEL DOTS */
+.carousel-dots {
+  margin-top: 25px;
+}
+
+.carousel-dots span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background: #fff;
+  opacity: 0.6;
+  border-radius: 50%;
+  transition: opacity 0.3s;
+}
+
+.carousel-dots span:hover {
+  opacity: 1;
+}
+
+/* SEZIONE CONTENUTO */
+.content {
+  padding: 60px 20px;
+  background: #f8f5f0;
+}
+
+.content h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 60px;
+  font-family: 'Playfair Display', serif;
+  color: #5c4632;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #d1c7b7;
+  transform: translateX(-50%);
+}
+
+.entry {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  margin-bottom: 80px;
+}
+
+.entry.left {
+  left: 0;
+  text-align: right;
+}
+
+.entry.right {
+  left: 50%;
+  text-align: left;
+}
+
+.entry .marker {
+  position: absolute;
+  top: 35px;
+  width: 16px;
+  height: 16px;
+  background: #8c7152;
+  border: 3px solid #f8f5f0;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.entry.left .marker {
+  right: -8px;
+}
+
+.entry.right .marker {
+  left: -8px;
+}
+
+.entry h3 {
+  font-style: italic;
+  font-size: 1.3em;
+  color: #4b3a2f;
+  margin-bottom: 8px;
+}
+
+.entry p {
+  font-size: 1.05em;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .entry {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left !important;
+  }
+
+  .timeline::before {
+    left: 10px;
+  }
+
+  .entry.left, .entry.right {
+    left: 0;
+  }
+
+  .entry.left .marker, .entry.right .marker {
+    left: -5px;
+    right: auto;
+  }
+}
